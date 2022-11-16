@@ -2,21 +2,21 @@
 
 ## Tokens
 
-| Token Code    | Operation | Regex |
-| ------------- | --------- | ----- |
-| ADD           | +         | +     |
-| SUB:          | -         | -     |
-| MUL:          | \*        | \*    |
-| DIV:          | /         | /     |
-| MOD:          | %         | %     |
-| LESS:         | <         | <     |
-| GREATER:      | >         | >     |
-| LESS THAN:    | <=        | <=    |
-| GREATER THAN: | >=        | >=    |
-| EQUAL TO:     | ==        | ==    |
-| NOT EQUAL TO: | !=        | !=    |
-| ASSIGNMENT:   | &         | &     |
-| BLOCK         | {}        | {.\*} |
+| Token Code   | Operation | Regex |
+| ------------ | --------- | ----- |
+| ADD          | +         | +     |
+| SUB          | -         | -     |
+| MUL          | \*        | \*    |
+| DIV          | /         | /     |
+| MOD          | %         | %     |
+| LESS         | <         | <     |
+| GREATER      | >         | >     |
+| LESS THAN    | <=        | <=    |
+| GREATER THAN | >=        | >=    |
+| EQUAL TO     | ==        | ==    |
+| NOT EQUAL TO | !=        | !=    |
+| ASSIGNMENT   | &         | &     |
+| BLOCK        | {}        | {.\*} |
 
 | Token Code | condition                                          | Regex |
 | ---------- | -------------------------------------------------- | ----- |
