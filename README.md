@@ -9,21 +9,22 @@
 | MUL          | \*        | \*    |
 | DIV          | /         | /     |
 | MOD          | %         | %     |
+| FLRDIV       | $         | $     |
 | LESS         | <         | <     |
 | GREATER      | >         | >     |
 | LESS THAN    | <=        | <=    |
 | GREATER THAN | >=        | >=    |
 | EQUAL TO     | ==        | ==    |
 | NOT EQUAL TO | !=        | !=    |
-| ASSIGNMENT   | &         | &     |
+| ASSIGNMENT   | =         | =     |
 | BLOCK        | {}        | {.\*} |
 
 | Token Code | condition                                          | Regex |
 | ---------- | -------------------------------------------------- | ----- |
-| TINY       | -128 <= num <= 127                                 | \d+   |
-| SMALL      | -32768 <= num >= 32767                             | \d+   |
-| PERFECT    | -2147483648 <= num >= 2147483647                   | \d+   |
-| BIG        | -9223372036854775808 <= num >= 9223372036854775808 | \d+   |
+| SHORT      | -128 <= num <= 127                                 | \d+   |
+| TALL       | -32768 <= num <= 32767                             | \d+   |
+| GRADE      | -2147483648 <= num <= 2147483647                   | \d+   |
+| VENTI      | -9223372036854775808 <= num <= 9223372036854775808 | \d+   |
 
 | Token Code | Regex         |
 | ---------- | ------------- |
@@ -33,21 +34,31 @@
 | BEGIN      | begin         |
 | END        | end           |
 
+## Priority Order
+
+- \+
+- \-
+- \*
+- /
+- ^
+
+> Top to Bottom
+
+<!-- Can we use bit wise operator -->
+
 ## Production Rules
 
 ```txt
 
 <Program> --> Begin <stmt> End
 
-<stmt> --> <if_stmt> | <while_stmt> | <as_s> | <block> | <declaration>
+<stmt> --> <if_stmt> | <while_stmt> | <as_s>  | <declaration>
 
-<if_stmt> --> cond <bool> : <stmt> :
+<if_stmt> --> cond <bool> { <stmt> }
 
-<while_stmt> --> repeat <bool> : <stmt> :
+<while_stmt> --> repeat <bool> { <stmt> }
 
-<as_s> --> <var> & <expression>
-
-<block> --> { <stmt> }
+<as_s> --> <var> = <expression>
 
 <bool> --> <band> { `OR` <band>}
 <band> { `OR` <band> }
