@@ -6,7 +6,7 @@
   "scripts": {
     "start": "yarn build && node dist/index.js",
     "dev:start": "ts-node src/index.ts",
-    "dev": "nodemon --exec ts-node src/index.ts working.exce",
+    "dev": "nodemon --exec ts-node src/index.ts ./tests/passing/one.exce",
     "build": "tsc --noEmit false"
   },
   "devDependencies": {

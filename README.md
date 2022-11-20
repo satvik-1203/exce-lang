@@ -213,7 +213,7 @@ Lexical Errors:
 
 ```txt
 
-start
+begin
 
   GRANDE varOne;
   varOne = 10+5 - 2;
