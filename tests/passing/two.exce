@@ -1,0 +1,16 @@
+begin
+
+  GRANDE varOne;
+  varOne = 10 + (5 + -2) * 4;
+
+  GRANDE varTwo;
+  varTwo = 2 * varOne;
+
+  SHORT iter_i; 
+  iter_i = 0;
+
+  repeat (iter_i < 5) {
+    iter_i = iter_i + 1;
+  }
+
+end

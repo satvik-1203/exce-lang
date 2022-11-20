@@ -1,13 +1,13 @@
 {
   "name": "PLC",
-  "version": "1.0.0",
   "main": "src/index.ts",
-  "repository": "git@github.com:satvik-1203/lexical-analyzer.git",
-  "license": "",
+  "repository": "git@github.com:satvik-1203/exce-lang.git",
+  "license": "MIT",
   "scripts": {
-    "start": "ts-node src/index.ts",
-    "dev": "nodemon --exec ts-node src/index.ts",
-    "build": "tsc"
+    "start": "yarn build && node dist/index.js",
+    "dev:start": "ts-node src/index.ts",
+    "dev": "nodemon --exec ts-node src/index.ts working.exce",
+    "build": "tsc --noEmit false"
   },
   "devDependencies": {
     "@types/node": "^18.11.2",

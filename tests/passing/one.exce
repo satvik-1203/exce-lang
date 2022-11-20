@@ -1,0 +1,26 @@
+begin
+
+  SHORT varOne;
+  varOne = 2;
+
+  VENTI varTwo;
+  varTwo = 90 + 100 + (2 + (5 * 2)) * varOne;
+
+  cond (varOne != varTwo) {
+    cond (varOne <= varTwo) {
+      varOne = varTwo * 2;
+    }
+  }
+
+  SHORT varThree;
+  varThree = 0;
+
+  repeat (varThree <= 5) {
+    varThree = varThree + 1;
+
+    cond (varThree % 2 == 0) {
+      varThree = varThree * 2;
+    }
+  }
+
+end

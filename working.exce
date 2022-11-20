@@ -1,8 +1,0 @@
-begin
-
-  SHORT variableOne;
-  variableOne = 10;
-  
-
-end
-

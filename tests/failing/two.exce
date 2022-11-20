@@ -1,0 +1,24 @@
+start
+
+  GRANDE varOne;
+  varOne = 10+5 - 2;
+
+  cond (varOne < = 15 {
+    varOne = 20;
+
+    cond (varOne == 20) {
+      varOne = varOne % 2;
+    
+    GRANDE varTwo;
+    varTwo = 10 + 5 * ( 2 + 3 ;
+  }
+
+end
+
+Error:
+
+- 10+5 : Need to have a space between the operands 10 + 5
+- < = : shouldn't be separated. <=
+- 15 ) : boolean expression should end with )
+- 2; } : boolean statement should end with }
+- 2 + 3 : mathematical parenthesis should be closed with )

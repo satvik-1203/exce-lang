@@ -1,3 +1,3 @@
-const DataTypes = new Set(["SHORT", "TALL", "GRADE", "VENTI"]);
+const DataTypes = new Set(["SHORT", "TALL", "GRANDE", "VENTI"]);
 
 export default DataTypes;

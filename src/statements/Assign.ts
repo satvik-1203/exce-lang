@@ -1,9 +1,19 @@
 import stack from "../stack";
 import Tokens from "../misc/Tokens";
-import Statement from "../statement";
+import Statement from "../Statement";
+import Expression from "../misc/Expression";
 
-export default function assign(statement: string) {
+/**
+ *
+ * This function is responsible for assigning a expression to the variable in stack
+ *
+ * @param statement
+ */
+
+export default function Assign(statement: string) {
   const regexMatch = statement.match(/([^;]+);(.*)/)!;
+
+  if (!regexMatch) throw new Error("Invalid formatting while assigning");
 
   const [_, assignStatement, restStatement] = regexMatch;
 
@@ -14,12 +24,7 @@ export default function assign(statement: string) {
   expression = expression.trim();
   // run the expression function to simplify the expression
 
-  if (stack[variable] == undefined)
-    throw new Error(`${variable} isn't defined`);
-
-  // const result = simplifyExpression(expression)
-
-  stack[variable][1] = +expression; // result
+  stack[variable][1] = Expression(expression); // result
 
   Statement(restStatement.trim());
 }

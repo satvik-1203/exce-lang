@@ -10,6 +10,16 @@ const Tokens = {
   DIV: "/",
   MOD: "%",
   FLRDIV: "$",
+  GT: ">",
+  LT: "<",
+  GTE: ">=",
+  LTE: "<=",
+  EQ: "==",
+  NE: "!=",
+  PARENTHESISOPEN: "(",
+  PARENTHESISCLOSE: ")",
+  CODEBLOCKOPEN: "{",
+  CODEBLOCKCLOSE: "}",
 };
 
 export default Tokens;

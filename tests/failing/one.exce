@@ -1,0 +1,21 @@
+begin
+
+  GRAND var1One;
+  var1One = 10 + (2 + 5);
+
+  cod ( var1One >= 20) {
+    var1Oe = 50;
+  }
+
+  VENT varTwo;
+  varTwo = var1One + 10;
+
+end
+
+Lexical Errors
+
+GRAND: Supposed to be GRANDE
+cod: Supposed to be cond
+vat1One: Doesn't follow the naming rules
+VENT: Supposed to be VENTI
+var1Oe: Supposed to be var1One
