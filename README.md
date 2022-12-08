@@ -308,6 +308,10 @@ end
 
 ![Grammar table](https://media.discordapp.net/attachments/1016158508422533181/1049419407450972161/image.png)
 
+### Table
+
+![table](https://cdn.discordapp.com/attachments/1016158508422533181/1050215338207358996/image.png)
+
 ### Fail - 1
 
 ![Grammar table](https://cdn.discordapp.com/attachments/1016158508422533181/1050213984650932304/image.png)
