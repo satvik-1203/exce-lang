@@ -17,7 +17,7 @@ Code starts with `begin` and ends with `end`. Between the block will have all th
 
 Starts with a Integer type keyword, followed by variable name, and ends with a `;`;
 
-The variable is stored in a hashmap, **key** is the variable name and the **value** is an array. `[type, value]`.
+The variable is stored in a hashmap, **key** is the variable name and the **value** is n array. `[type, value]`.
 
 ### Assign Statement
 
@@ -76,12 +76,12 @@ Invalid expression:
 
 ### Integer Types
 
-| Token Code | condition                                          | Regex | Size    |
-| ---------- | -------------------------------------------------- | ----- | ------- |
-| SHORT      | -128 <= num <= 127                                 | \d+   | 1 byte  |
-| TALL       | -32768 <= num <= 32767                             | \d+   | 2 bytes |
-| GRANDE     | -2147483648 <= num <= 2147483647                   | \d+   | 4 bytes |
-| VENTI      | -9223372036854775808 <= num <= 9223372036854775808 | \d+   | 8 bytes |
+| Token Code | condition                                          | Regex | Size    | Literal |
+| ---------- | -------------------------------------------------- | ----- | ------- | ------- |
+| SHORT      | -128 <= num <= 127                                 | \d+   | 1 byte  | 1x      |
+| TALL       | -32768 <= num <= 32767                             | \d+   | 2 bytes | 2x      |
+| GRANDE     | -2147483648 <= num <= 2147483647                   | \d+   | 4 bytes | 4x      |
+| VENTI      | -9223372036854775808 <= num <= 9223372036854775808 | \d+   | 8 bytes | 8x      |
 
 ### Keyword Types
 
@@ -118,7 +118,7 @@ Invalid expression:
 
 ```txt
 
-<Program> --> Begin <stmt_list> End
+<Program> --> begin <stmt_list> end
 <stmt_list> --> {<stmt> `;`}
 <stmt> --> <if_stmt> | <while_stmt> | <as_s>  | <declaration>
 <if_stmt> --> cond  `(` <bool> `)` `{` <stmt_list> `}`
@@ -154,7 +154,15 @@ F -> a               Constant
 
 ## Is it a LL Grammar? (C)
 
-Our code works on LR Grammar and doesn't have pairwise disjoint. Our code works on push down / top down automata.
+My code has both LL and LR grammar in it. To identify which statement is which, we use LL grammar.
+
+- When the code starts with `begin` everything till `end` comes under code section
+- If it starts with a datatype, it is identified as a declaration statement
+- if it starts with `cond`, it is identified as a condition statement
+- If it starts with a variable, it is identified as a assigning statement
+- If it starts with `repeat`, it is identified as a loop statement
+
+as for solving an expression, I use LR grammar. It makes the expression tree.
 
 ## Is it Ambiguous Grammar? (D)
 
@@ -298,24 +306,20 @@ end
 
 ### LR(1) Grammar
 
-![Grammar table](https://raw.githubusercontent.com/satvik-1203/exce-lang/main/images/one.jpg)
-
-### LR(1) Parse Table
-
-![Grammar table](https://raw.githubusercontent.com/satvik-1203/exce-lang/main/images/two.jpg)
+![Grammar table](https://media.discordapp.net/attachments/1016158508422533181/1049419407450972161/image.png)
 
 ### Fail - 1
 
-![Grammar table](https://raw.githubusercontent.com/satvik-1203/exce-lang/main/images/fail1.jpg)
+![Grammar table](https://cdn.discordapp.com/attachments/1016158508422533181/1050213984650932304/image.png)
 
 ### Pass - 1
 
-![Grammar table](https://raw.githubusercontent.com/satvik-1203/exce-lang/main/images/pass1.jpg)
+![Grammar table](https://cdn.discordapp.com/attachments/1016158508422533181/1050214029387366400/image.png)
 
 ### Fail - 2
 
-![Grammar table](https://raw.githubusercontent.com/satvik-1203/exce-lang/main/images/fail2.jpg)
+![Grammar table](https://cdn.discordapp.com/attachments/1016158508422533181/1049405794824761435/image.png)
 
 ### Pass - 2
 
-![Grammar table](https://raw.githubusercontent.com/satvik-1203/exce-lang/main/images/pass2.jpg)
+![Grammar table](https://cdn.discordapp.com/attachments/1016158508422533181/1049405795181265039/image.png)
